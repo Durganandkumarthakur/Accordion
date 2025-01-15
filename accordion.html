@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>accordion</title>
+</head>
+<style>
+    body{
+        margin: 0px;
+        padding: 0px;
+        text-decoration: aqua;
+    }
+
+    .accordion{
+        width: 100%;
+        padding: 10px;
+        background-color: #555;
+        text-align: left;
+        transition: 0.4s;
+        cursor: pointer;
+        border: none;
+        font-size: 17px;
+    }
+
+    .panel{
+        padding: 0 18px;
+        overflow: hidden;
+        background-color: white;
+        display: none;
+    }
+
+ .accordion:hover{
+    background-color:#555;
+    color: aqua;
+ }
+</style>
+<body>
+    <h2>Accordion</h2>
+    <button class="accordion">Section 1</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit ullam ad sequi vero quia tenetur explicabo, doloremque neque temporibus reiciendis hic placeat quas necessitatibus aut ipsam ipsa obcaecati porro at?
+        Laudantium obcaecati quis quod ad alias impedit dolor debitis rem blanditiis fugit illo eligendi vitae unde, quas voluptates nam. Quia, itaque expedita! Voluptate, delectus sunt ad nesciunt expedita accusamus enim.</p>
+    </div>
+
+    <button class="accordion">Section 2</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit ullam ad sequi vero quia tenetur explicabo, doloremque neque temporibus reiciendis hic placeat quas necessitatibus aut ipsam ipsa obcaecati porro at?
+        Laudantium obcaecati quis quod ad alias impedit dolor debitis rem blanditiis fugit illo eligendi vitae unde, quas voluptates nam. Quia, itaque expedita! Voluptate, delectus sunt ad nesciunt expedita accusamus enim.</p>
+    </div>
+
+
+    <button class="accordion">Section 3</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit ullam ad sequi vero quia tenetur explicabo, doloremque neque temporibus reiciendis hic placeat quas necessitatibus aut ipsam ipsa obcaecati porro at?
+        Laudantium obcaecati quis quod ad alias impedit dolor debitis rem blanditiis fugit illo eligendi vitae unde, quas voluptates nam. Quia, itaque expedita! Voluptate, delectus sunt ad nesciunt expedita accusamus enim.</p>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for(i=0; i< acc.length; i++){
+            acc[i].addEventListener("click", function(){
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if(panel.style.display==="block"){
+                    panel.style.display= null;
+                }else{
+                    panel.style.display = "block";
+                }
+            })
+        }
+
+    </script>
+</body>
+</html>
